@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment
+from .models import Post, Comment, Futebol
 from .forms import PostForm
 
 
@@ -46,4 +46,8 @@ def post_edit(request, pk):
 def comment_list(request):
     comment = Comment.objects.all()
     return render(request, 'blog/comment_list.html', {'comment': comment})
+
+def futebol_list(request):
+    futebol = Futebol.objects.all()
+    return render(request, 'blog/futebol_list.html', {'futebol': futebol})
 
