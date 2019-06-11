@@ -3,10 +3,11 @@
 {% block content %}
     {% for perfil in perfils %}
     <div class="perfil">
-          <div class="date">
-                <p>teste</p>
-          </div>
-
+        <div class="date">
+            <p>published: {{ post.published_date }}</p>
+        </div>
+        <h1><a href="{% url 'perfil_detail' pk=perfil.pk %}"> {{ perfil.title }}</a></h1>
+            <p> {{ perfil.text }}</p>
 
 
     </div>
