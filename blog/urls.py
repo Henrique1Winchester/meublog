@@ -9,6 +9,8 @@ urlpatterns = [
     path('/comment', views.comment_list, name='comment_list'),
     path('futebol', views.futebol_list, name ='futebol_list'),
     path('futebol/<int:pk>/edit', views.futebol_edit, name='futebol_edit'),
+    path('futebol/<int:pk>/', views.futebol_detail, name='futebol_detail'),
+    path('futebol/<int:pk>/edit', views.futebol_edit, name='futebol_edit'),
     path('naruto', views.naruto_list, name ='naruto_list'),
     path('carro', views.carro_list, name ='carro_list'),
 

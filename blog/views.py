@@ -63,6 +63,9 @@ def futebol_edit(request, pk):
     else:
         form = FutebolForm(instance=futebol)
     return render(request, 'blog/futebol_edit.html', {'form': form})
+def futebol_detail(request, pk):
+    futebol = get_object_or_404(Futebol, pk=pk)
+    return render(request, 'blog/futebol_detail.html', {'futebol': futebol})
 
 
 def naruto_list(request):
