@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post, Comment, Futebol, Naruto, Carro
-from .forms import PostForm
+from .forms import PostForm, FutebolForm
 
 
 # Create your views here.
@@ -50,6 +50,20 @@ def comment_list(request):
 def futebol_list(request):
     futebol = Futebol.objects.all()
     return render(request, 'blog/futebol_list.html', {'futebol': futebol})
+
+def futebol_edit(request, pk):
+    futebol = get_object_or_404(Futebol, pk=pk)
+    if request.method == 'POST':
+        form = FutebolForm(request.POST, instance=futebol)
+        if form.is_valid():
+            futebol = form.save(commit=False)
+            futebol.jogador = request.user
+            futebol.save()
+            return redirect('futebol_detail', pk=futebol.pk)
+    else:
+        form = FutebolForm(instance=futebol)
+    return render(request, 'blog/futebol_edit.html', {'form': form})
+
 
 def naruto_list(request):
     naruto = Naruto.objects.all()

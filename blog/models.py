@@ -51,7 +51,7 @@ class Carro(models.Model):
     pista = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     estrada = models.CharField(max_length=200)
     campo = models.TextField()
-    published_date = models.DateTimeField(
-        blank=True, null=True)
+    published_date = models.DateTimeField(blank=True, null=True)
+
     def __str__(self):
         return self.estrada
