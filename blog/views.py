@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
-from .models import Post, Comment, Futebol
+from .models import Post, Comment, Futebol, Naruto
 from .forms import PostForm
 
 
@@ -51,3 +51,6 @@ def futebol_list(request):
     futebol = Futebol.objects.all()
     return render(request, 'blog/futebol_list.html', {'futebol': futebol})
 
+def naruto_list(request):
+    naruto = Naruto.objects.all()
+    return render(request, 'blog/naruto_list.html', {'naruto': naruto})

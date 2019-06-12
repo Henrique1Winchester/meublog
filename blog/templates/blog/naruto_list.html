@@ -1,13 +1,13 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for bol in futebol %}
+    {% for boruto in naruto %}
     <div class="post">
           <div class="date">
-                <p>time: {{ bol.time }}</p>
+                <p>data: {{ boruto.data }}</p>
           </div>
 
-          <p> {{ bol.campo }}</p>
+          <p> {{ boruto.campo }}</p>
     </div>
     {% endfor %}
 

@@ -38,3 +38,11 @@ class Futebol(models.Model):
 
     def __str__(self):
         return self.time
+
+class Naruto(models.Model):
+    ninjas = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    data = models.CharField(max_length=200)
+    campo = models.TextField()
+
+    def __str__(self):
+        return self.ninjas
