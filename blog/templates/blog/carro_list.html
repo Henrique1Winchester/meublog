@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    {% for auto in carro %}
+    <div class="post">
+          <div class="date">
+                <p>published: {{ post.published_date }}</p>
+          </div>
+          <h1><a href="{% url 'post_detail' pk=post.pk %}"> {{ auto.pista }}</a></h1>
+          <p> {{ auto.estrada }}</p>
+    </div>
+    {% endfor %}
+
+{% endblock %}
